@@ -1,71 +1,86 @@
-import './App.css'
+import Card from './components/Card';
 
-function App() {
+const plans = [
+  {
+  name: 'ACCESS',
+  price: 30,
+  currency: '$',
+  frequency: 'month',
+  intro: 'Pay as you go access to all Waterman centres, member rates & benefits.',
+  features: [
+    'Your first hour free, every day',
+    'limited centre access (including workstations) from $2.5/hour',
+    'Meeting room access from $20/hour',
+    'Unlimited high speed internet (100/100mbps)',
+    'Day rate capped at $35',
+    'Access Hours: 9am-5pm',
+  ],
+  hours: 'Access Hours: 9am-5pm',
+ },
+
+ {
+  name: 'PART TIME',
+  price: 200,
+  currency: '$',
+  frequency: 'month',
+  intro: 'Come in a few days a month or book meeting rooms as you need them.',
+  features: [
+    
+    '$200 included Waterman Credits to use on workspace or room bookings',
+    '50% discount on all meeting room bookings',
+    'Day rate capped at $25',
+   
+  ],
+  hours: 'Access Hours: 9am-5pm',
+ },
+
+ {
+  name: 'FULL TIME',
+  price: 500,
+  currency: '$',
+  frequency: 'month',
+  intro: '24/7/365 Access so you can work where you like, when you like.',
+  features: [
+    'Unlimited centre access at no additional costs',
+    'Reception notification services included',
+    '50% discount on all meeting room bookings',
+  
+  ],
+ },
+ ];
+ function App()
+ {
 
   return (
-    <>
-    <div className='w-full bg-white flex justify-center items-center px-6 py-12'>
-      <img src='/images/watermanLogo.png' className="max-w-56 mx-auto"/>
-    </div>
-
-   <div className="h-full flex justify-center items-center px-6 py-12">
-      <div className="bg-gray-100 border border-gray-100 border-opacity-10 rounded-xl shadow-xl cursor-pointer">
-        <div className="px-6 py-12 border-b-2 border-gray-100">
-          <p className="text-4xl font-bold text-left mb-4 leading-8 text-sky-900"> ACCESS</p>
-          <div className="flex justify-left items-left">
-            <div className="flex items-end">
-             <p className="text-3xl font-light tracking-tight text-orange-400">$</p>
-             <p className="text-5xl font-semibold tracking-tight text-orange-400">30</p>
-            </div>   
-            <div className="flex items-start">
-             <p className="pl-3 text-3xl font-light tracking-tight text-orange-400">/month</p>
-            </div>
-             <div className="flex items-end">
-             <p className="text-sm leading-6 text-sky-950">cancel anytime</p>
-             </div>
-          </div>
-        </div>
-
-        <div className="px-6 py-4 bg-white">
-        <p className="text-base font-semibold tracking-tight text-sky-950 pt-4">Pay as you go access to all Waterman centres, member rates & benefits.</p>
-          <ul className="pt-4 space-y-4">
-            <li>
-              
-              <p className="text-base leading-6 text-gray-600">Your first hour free, every day</p>
-            </li>
-            <li>
-              <p className="text-base leading-6 text-gray-600">limited centre access (including workstations) from $2.5/hour</p>
-            </li>
-            <li>
-              <p className="text-base leading-6 text-gray-600">Meeting room access from $20/hour</p>
-            </li>
-            <li>
-              <p className="text-base leading-6 text-gray-600">Unlimited high speed internet (100/100mbps)</p>
-            </li>
-            <li>
-              <p className="text-base leading-6 text-gray-600">Day rate capped at $35</p>
-            </li>
-        
-
-            <p className="pt-10 text-base leading-6 text-gray-600">Access Hours: 9am-5pm</p>
-
-          </ul>
-
-          <button className="mt-12 w-full py-4 px-8 rounded-xl text-lg whitespace-nowrap bg-orange-400 text-sky-950
-   active:bg-sky-950 focus:bg-sky-950 focus:text-white focus:outline-none transition-all">SELECT</button>
-
-        </div>
-
-     
-
+    <div className="w-full top-0 bg-white">
+      <div className="container mx-auto py-5 flex justify-center"> 
+        <img className="w-63 h-16" src="./images/watermanLogo.png"></img>
       </div>
 
+     
+     <div class="grid grid-cols-[65vw_minmax(100vw,_1fr)_45vw]"> 
+       <div class="bg-indigo-50  
+                    h-[100vh]"> 
+         <h2 className="pt-10 pl-4 text-lg font-normal text-gray-600">
+          Select the membership that best suits you
+         </h2>
+         <div className="px-4 pt-10 grid lg:grid-cols-3 gap-12 lg:gap-4">
+            {plans.map(plans => (
+           <div className="w-full max-w-md mx-auto}">   
+             <Card { ...plans} key={plans} />
+           </div> 
+           
+             ))}      
+               
+          </div>
+              
+        </div>
+            <div className="bg-indigo-100 h-[100vh]">
+             <h2 className="pt-10 pl-4 text-2xl font-normal text-gray-600">WATERMAN MEMBERSHIP</h2>
+            </div>
+      </div>
    </div>
+   );
+ }   
 
-  
-  
-    </>
-  )
-}
-
-export default App
+export default App;

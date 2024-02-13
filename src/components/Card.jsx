@@ -1,5 +1,5 @@
 const Card = ({name = '', price = 0, currency ='$', frequency = 'month', intro = '', hours = '', features = []}) => (
-  <div className="bg-gray-100 border border-gray-100 border-opacity-10 rounded-xl shadow-xl cursor-pointer">
+  <div className="bg-gray-100 border border-gray-100 border-opacity-10 rounded-2xl shadow-xl cursor-pointer">
    <div className="px-6 py-12 border-b-2 border-gray-100 peer-focus:border-sky-500 border-4">
      <p className="text-4xl font-bold text-left mb-4 leading-8 text-sky-900">{name}</p>
       <div className="flex justify-left items-left">
@@ -23,7 +23,7 @@ const Card = ({name = '', price = 0, currency ='$', frequency = 'month', intro =
     <ul className="pt-4 space-y-4">
      {features.map((features, index) => (
       <li key={index} className="flex items-center space-x-4">
-        <svg className="w-6 h-6 text-orange-500 flex-shrink-0" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg className="w-6 h-6 text-orange-400 flex-shrink-0" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"></path>
 </svg>
         <p className="text-lg text-gray-600">{features}</p>
